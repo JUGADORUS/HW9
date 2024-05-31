@@ -21,7 +21,12 @@ public class Cube : MonoBehaviour
     private void Act()
     {
         List<Rigidbody> explodableObjects = _divider.Divide();
-        _explosion.Explode(explodableObjects);
+
+        if (explodableObjects.Count == 0)
+        {
+            _explosion.Explode(explodableObjects);
+        }
+
         _objectRemover.Remove();
     }
 }
