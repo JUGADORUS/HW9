@@ -29,7 +29,6 @@ public class Divider : MonoBehaviour
             int amountObjects = Random.Range(minAmountObjects, maxAmountObjects);
             gameObject.transform.localScale /= _divideNumber;
             Rigidbody rigidbody = GetComponent<Rigidbody>();
-            
 
             for (int i = 0; i < amountObjects; i++)
             {

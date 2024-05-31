@@ -20,8 +20,6 @@ public class Explosion : MonoBehaviour
     {
         _explosionRadius *= _increase—oefficient;
         _explosionForce *= _increase—oefficient;
-
-        Debug.Log($"Radius {_explosionRadius} Force {_explosionForce}");
     }
 
     private List<Rigidbody> GetExplodableObjects()
