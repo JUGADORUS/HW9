@@ -1,15 +1,14 @@
 using UnityEngine;
 
-public class BehaviourOnClick : MonoBehaviour
+public class ActionOnClick : MonoBehaviour
 {
     [SerializeField] private ClickDetector _detector;
-    [SerializeField] private Multiplyer _multiplyer;
+    [SerializeField] private Divider _multiplyer;
     [SerializeField] private ObjectRemover _objectRemover;
     [SerializeField] private Explosion _explosion;
 
     private void OnEnable()
     {
-        ClickDetector _detector = GetComponent<ClickDetector>();
         _detector.Clicked += Act;
     }
 
@@ -20,7 +19,7 @@ public class BehaviourOnClick : MonoBehaviour
 
     private void Act()
     {
-        _multiplyer.Multiply();
+        _multiplyer.Divide();
         _explosion.Explode();
         _objectRemover.Remove();
     }

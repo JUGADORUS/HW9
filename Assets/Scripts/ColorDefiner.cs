@@ -1,13 +1,14 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Renderer))]
 public class ColorDefiner : MonoBehaviour
 {
     private void Start()
     {
-        DefineColor();
+        Define();
     }
 
-    private void DefineColor()
+    private void Define()
     {
         float randomChannelOne = Random.Range(0f, 1f);
         float randomChannelTwo = Random.Range(0f, 1f);
