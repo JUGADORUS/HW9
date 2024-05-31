@@ -1,9 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class ActionOnClick : MonoBehaviour
+public class Cube : MonoBehaviour
 {
     [SerializeField] private ClickDetector _detector;
-    [SerializeField] private Divider _multiplyer;
+    [SerializeField] private Divider _divider;
     [SerializeField] private ObjectRemover _objectRemover;
     [SerializeField] private Explosion _explosion;
 
@@ -19,8 +20,8 @@ public class ActionOnClick : MonoBehaviour
 
     private void Act()
     {
-        _multiplyer.Divide();
-        _explosion.Explode();
+        List<Rigidbody> explodableObjects = _divider.Divide();
+        _explosion.Explode(explodableObjects);
         _objectRemover.Remove();
     }
 }
